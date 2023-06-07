@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true,
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "javascript.preferences.importModuleSpecifier": "non-relative"
+}
