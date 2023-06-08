@@ -1,4 +1,4 @@
-import "./globals.css";
+import "src/app/globals.css";
 
 import React from "react";
 import { Footer } from "src/components/Footer";
