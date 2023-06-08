@@ -1,10 +1,9 @@
 import React from "react";
 import { Post } from "src/components/Post";
-import { client } from "src/libs/microcms";
+import { getPosts } from "src/libs/microcms";
 
 export const PostList = async () => {
-  const data = await client.get({ endpoint: "blog" });
-  const posts = data.contents;
+  const posts = await getPosts();
 
   return (
     <div>
