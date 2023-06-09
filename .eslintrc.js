@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2022: true,
@@ -10,6 +11,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
+    "plugin:tailwindcss/recommended",
   ],
   overrides: [],
   parserOptions: {
@@ -20,7 +22,8 @@ module.exports = {
     "sort-keys-custom-order",
     "simple-import-sort",
     "import",
-    "unused-imports"
+    "unused-imports",
+    "tailwindcss",
   ],
   rules: {
     "import/first": "error",
@@ -52,6 +55,12 @@ module.exports = {
     react: {
       version: "detect",
     },
+    tailwindcss: {
+      // レスポンシブの記述をまとめる
+      groupByResponsive: false,
+      // 独自のクラスでエラーを出さなくする
+      // whitelist: [""],
+    }
   },
 };
 
