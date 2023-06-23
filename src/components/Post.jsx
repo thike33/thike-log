@@ -10,20 +10,22 @@ export const Post = ({ post }) => {
     <li>
       <Link
         href={`blog/${post.id}`}
-        className="block overflow-hidden rounded-lg shadow-md"
+        className="group block overflow-hidden rounded-lg shadow-md"
       >
-        <div className="">
+        <div className="overflow-hidden">
           <Image
             src={post.thumbnail.url}
             width="640"
             height="427"
-            className="aspect-video object-cover"
+            className="aspect-video object-cover transition-transform group-hover:scale-110"
             alt={post.title}
             priority
           />
         </div>
         <div className="bg-white p-4">
-          <h2 className="text-xl font-bold">{post.title}</h2>
+          <h2 className="text-xl font-bold transition-colors group-hover:text-blue-500">
+            {post.title}
+          </h2>
           <div className="mt-2 flex items-center gap-4">
             <time className="text-base" dateTime={post.revisedAt}>
               {formatDate}
