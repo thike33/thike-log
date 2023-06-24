@@ -1,12 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { getCategories } from "src/libs/microcms";
 
-export const Aside = async () => {
-  const categories = await getCategories();
-  console.log(categories);
-
+export const Aside = () => {
   return (
     <aside className="mx-auto mt-10 flex w-full max-w-2xl flex-col gap-8 lg:mt-0 lg:w-80">
       <div className="rounded-lg bg-white p-4 shadow-md">
@@ -35,13 +31,7 @@ export const Aside = async () => {
         </div>
       </div>
       <div className="rounded-lg bg-white p-4 shadow-md">
-        <ul>
-          {categories.map(category => (
-            <li key={category.id}>
-              <Link href={category.id}>{category.name}</Link>
-            </li>
-          ))}
-        </ul>
+        <h2>検索</h2>
       </div>
     </aside>
   );

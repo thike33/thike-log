@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React from "react";
+import { getCategories } from "src/libs/microcms";
 
-export const Header = () => {
+export const Header = async () => {
+  const categories = await getCategories();
+
   return (
     <header className="bg-blue-500 py-5">
       <div className="m-auto flex w-full max-w-7xl items-center justify-between px-5">
@@ -10,16 +13,11 @@ export const Header = () => {
         </h1>
         <nav>
           <ul className="flex items-center gap-5">
-            <li>
-              <Link href="/" className="text-base font-bold text-white">
-                トップ
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="text-base font-bold text-white">
-                カテゴリー
-              </Link>
-            </li>
+            {categories.map((category) => (
+              <li key={category.id}>
+                <Link href={`category/${category.id}`} className="text-base font-bold text-white">{category.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

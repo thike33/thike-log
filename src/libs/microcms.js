@@ -28,12 +28,21 @@ export const getPosts = async (queries) => {
   return data.contents;
 }
 
+// カテゴリーのIDと一致した記事を取得
+export const getPostsByCategoryId = async (categoryId) => {
+  const data = await client.get({
+    endpoint: 'blog',
+    queries: { filters: `category[equals]${categoryId}` },
+  });
+  return data.contents;
+}
+
 // カテゴリー一覧を取得
 export const getCategories = async () => {
-  const category = await client.get({
+  const categories = await client.get({
     endpoint: "categories",
   });
-  return category.contents;
+  return categories.contents;
 }
 
 // 投稿詳細を取得
