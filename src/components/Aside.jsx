@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { SearchArea } from "src/components/SearchArea";
 
 export const Aside = () => {
   return (
@@ -31,7 +32,8 @@ export const Aside = () => {
         </div>
       </div>
       <div className="rounded-lg bg-white p-4 shadow-md">
-        <h2>検索</h2>
+        <h2 className="text-xl font-bold">検索</h2>
+        <SearchArea />
       </div>
     </aside>
   );
