@@ -8,7 +8,7 @@ export default async function BlogPost({ params }) {
   const formatDate = getFormatDate(post.revisedAt);
 
   return (
-    <div className="m-auto w-full max-w-2xl rounded-lg bg-white p-4 shadow-md lg:w-[calc(100%-360px)] lg:max-w-none">
+    <>
       <h1 className="mt-4 text-3xl font-bold">{post.title}</h1>
       <div className="mt-4 flex gap-4">
         <time className="" dateTime={post.revisedAt}>
@@ -27,6 +27,6 @@ export default async function BlogPost({ params }) {
         />
       </div>
       <div className="mt-10">{post.contents}</div>
-    </div>
+    </>
   );
 }
