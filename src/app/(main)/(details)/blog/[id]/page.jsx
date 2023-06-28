@@ -11,10 +11,10 @@ export default async function BlogPost({ params }) {
     <>
       <h1 className="mt-4 text-3xl font-bold">{post.title}</h1>
       <div className="mt-4 flex gap-4">
-        <time className="" dateTime={post.revisedAt}>
+        <time dateTime={post.revisedAt}>
           {formatDate}
         </time>
-        <span className="">{post.category.name}</span>
+        <span>{post.category.name}</span>
       </div>
       <div className="mt-10">
         <Image
