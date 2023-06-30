@@ -1,5 +1,5 @@
 import React from "react";
-import { Post } from "src/components/Post";
+import { PostList } from "src/components/PostList";
 import { getPostsByCategoryId } from "src/libs/microcms";
 
 export default async function CategoryList({ params }) {
@@ -10,11 +10,5 @@ export default async function CategoryList({ params }) {
     return <p className="md:text-xl">記事が見つかりませんでした。</p>;
   }
 
-  return (
-    <ul className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2">
-      {postList.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
-    </ul>
-  );
+  return <PostList postList={postList} />;
 }
