@@ -11,7 +11,7 @@ export default async function CategoryList({ params }) {
   }
 
   return (
-    <ul className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-2">
+    <ul className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2">
       {postList.map((post) => (
         <Post key={post.id} post={post} />
       ))}
